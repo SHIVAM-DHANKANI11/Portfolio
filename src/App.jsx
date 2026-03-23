@@ -1,37 +1,28 @@
-import { useState, useEffect } from 'react';
-import Navbar from './sections/Navbar';
-import Hero from './sections/Hero';
-import { About, Skills, Projects, Certifications, Achievements, Contact } from './sections/Sections';
+import Navbar from './components/Navbar';
+import Hero from './components/3D/Hero';
+import About from './sections/About';
+import Skills from './sections/Skills';
+import Projects from './sections/Projects';
+import Certifications from './sections/Certifications';
+import Achievements from './sections/Achievements';
+import Contact from './sections/Contact';
+import Footer from './components/Footer';
 import './styles/global.css';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
-
   return (
-    <div className="app">
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Achievements />
-      <Contact />
-      
-      {/* Footer */}
-      <footer style={{
-        textAlign: 'center',
-        padding: '2rem',
-        background: 'rgba(0,0,0,0.5)',
-        color: '#b8b8d1',
-        fontSize: '0.9rem'
-      }}>
-        <p>© 2026 Shivam Dhankani. Built with ❤️ using React + Three.js</p>
-      </footer>
+    <div className="app-container">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Certifications />
+        <Achievements />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,275 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+/* Loading Logo */
+.loading-logo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 2rem;
+}
+
+.logo-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00f3ff 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.logo-inner {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #00f3ff;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.8),
+              inset 0 0 30px rgba(0, 243, 255, 0.5);
+  animation: rotate 3s linear infinite;
+}
+
+.logo-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #bc13fe;
+  border-bottom-color: #00f3ff;
+  animation: spin 2s linear infinite;
+}
+
+.ring-1 {
+  width: 120%;
+  height: 120%;
+  animation-duration: 3s;
+}
+
+.ring-2 {
+  width: 140%;
+  height: 140%;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+.ring-3 {
+  width: 160%;
+  height: 160%;
+  animation-duration: 5s;
+}
+
+/* Boot Text */
+.boot-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: #00f3ff;
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 243, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f3ff, #bc13fe, #00f3ff);
+  background-size: 200% 100%;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+  animation: gradient-shift 2s linear infinite;
+}
+
+.progress-glow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 100%;
+  background: radial-gradient(circle, #fff, transparent);
+  filter: blur(5px);
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #00f3ff;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.6);
+}
+
+/* Grid Background */
+.loading-grid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+  transform: perspective(500px) rotateX(60deg);
+  animation: grid-move 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Particles */
+.loading-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00f3ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+  animation: float-up linear infinite;
+}
+
+/* Scan Line Effect */
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 243, 255, 0.5), transparent);
+  animation: scan-down 3s linear infinite;
+  top: 0;
+  left: 0;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes grid-move {
+  0% {
+    transform: perspective(500px) rotateX(60deg) translateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateX(60deg) translateY(50px);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh) scale(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
+  }
+}
+
+@keyframes scan-down {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progress-container {
+    width: 300px;
+  }
+
+  .boot-text {
+    font-size: 0.9rem;
+  }
+
+  .loading-logo {
+    width: 100px;
+    height: 100px;
+  }
+}

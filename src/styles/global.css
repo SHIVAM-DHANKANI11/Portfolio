@@ -131,3 +131,13 @@ html {
 .glow {
   animation: glow 2s ease-in-out infinite;
 }
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
