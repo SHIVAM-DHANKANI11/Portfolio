@@ -1,0 +1,10 @@
+# Deploy to Netlify
+# https://app.netlify.com/start
+
+# Build command
+npm run build
+
+# Publish directory
+dist
+
+# Optional: Set environment variables in Netlify dashboard if needed

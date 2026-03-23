@@ -1,0 +1,40 @@
+.typing-container {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+  margin-top: 1rem;
+  min-height: 50px;
+}
+
+.typed-text {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #bc13fe;
+  font-weight: bold;
+  opacity: 0;
+  animation: none;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .typing-container {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    min-height: 45px;
+  }
+}
